@@ -29,10 +29,10 @@ app.get('/', function (req, res) {
 // Route to create a grocery list item
  app.post('/create_item', function (req, res) {
 	//Getting body parameters
-	const { item_name, item_count} =req.body;
+	const { item_name, item_count, item_description} =req.body;
 
 	//Execute creatItems method
-	dbOperations.createItem(item_name, item_count, res);
+	dbOperations.createItem(item_name, item_count, item_description, res);
 
 	
  })

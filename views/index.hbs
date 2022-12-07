@@ -34,6 +34,7 @@
             <form action="/create_item" method="POST">
                 <input type="text"  name="item_name" class="form-control"  placeholder="Enter grocery item (ex. Cereal)" size="40"><br>
                 <input type="number"  name="item_count" class="form-control" placeholder="Enter quantity (ex. 2)" size="60"><br>
+                <input type="description"  name="item_description" class="form-control" placeholder="Enter description" size="60"><br>
                 <input type="submit" class="btn btn-primary" value="submit">
             </form>
 
@@ -43,12 +44,14 @@
                     <tr>
                         <th>Grocery Item</th>
                         <th>Quantity</th>
+                        <th>Description</th>
                         <th>MODIFY</th>
                     </tr>
                 {{#each rows}}
                     <tr>
                         <td>{{this.item_name}}</td>
                         <td>{{this.item_count}}</td>
+                        <td>{{this.item_description}}</td>
                         <td>
                             <form action="/delete_item" method="POST" style="float:left; margin-right: 12px;">
                                 <button name="deleterecord" id="deletenow" type="submit" class="btn btn-danger" value="{{this.itemID}}">DELETE</button>
